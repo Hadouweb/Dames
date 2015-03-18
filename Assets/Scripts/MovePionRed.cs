@@ -7,9 +7,11 @@ public class MovePionRed : MonoBehaviour {
 
 	void OnMouseDown ()
 	{
-		Debug.Log("Hello", gameObject);
+		float posX = this.gameObject.position.x;
+		float posY = this.gameObject.position.y;
+		Debug.Log (posY + " " + posX);
+
 		Rigidbody clone;
-		clone = Instantiate(Possibility, transform.position, transform.rotation) as Rigidbody;
-		clone.velocity = transform.TransformDirection(Vector3.forward * 10);
+		clone = Instantiate(Possibility, transform.position, Quaternion.Euler ( 90, 0, 0 ) ) as Rigidbody;
 	}
 }
